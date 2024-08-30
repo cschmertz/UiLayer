@@ -10,12 +10,12 @@ pipeline {
                 git url: 'https://github.com/cschmertz/UiLayer', branch: 'main'
 
                 // API Layer Repository
-                dir('api-layer') {
+                dir('ApiLayer') {
                     git url: 'https://github.com/cschmertz/ApiLayer', branch: 'main'
                 }
 
                 // Database Layer Repository
-                dir('database-layer') {
+                dir('DatabaseLayer') {
                     git url: 'https://github.com/cschmertz/DatabaseLayer', branch: 'main'
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
 
         stage('Build and Test API Layer') {
             steps {
-                dir('api-layer') {
+                dir('ApiLayer') {
                     sh 'mvn clean install'  // This builds and runs tests for the API layer
                 }
             }
@@ -49,7 +49,7 @@ pipeline {
 
         stage('Build and Test Database Layer') {
             steps {
-                dir('database-layer') {
+                dir('DatabaseLayer') {
                     sh 'mvn clean install'  // This builds and runs tests for the Database layer
                 }
             }
