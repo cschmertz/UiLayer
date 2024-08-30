@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build and Test UI Layer') {
             steps {
-                dir('~IdeaProjects/UiLayer') {
+                dir('UiLayer') {
                     sh 'mvn clean install'  // This builds and runs tests for the UI layer
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
 
         stage('Build and Test API Layer') {
             steps {
-                dir('~IdeaProjects/ApiLayer') {
+                dir('api-layer') {
                     sh 'mvn clean install'  // This builds and runs tests for the API layer
                 }
             }
@@ -49,7 +49,7 @@ pipeline {
 
         stage('Build and Test Database Layer') {
             steps {
-                dir('~IdeaProjects/DatabaseLayer') {
+                dir('database-layer') {
                     sh 'mvn clean install'  // This builds and runs tests for the Database layer
                 }
             }
