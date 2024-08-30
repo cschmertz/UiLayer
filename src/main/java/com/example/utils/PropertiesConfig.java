@@ -9,7 +9,7 @@ public class PropertiesConfig {
     private Properties properties;
     private static PropertiesConfig instance;
 
-    private PropertiesConfig() {
+    PropertiesConfig() {
         properties = new Properties();
         try {
             FileInputStream fis = new FileInputStream("src/test/resources/config/test-config.properties");

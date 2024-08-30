@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import com.example.pages.LoginPage;
 
 public class TestContext {
+
     private WebDriver driver;
     private LoginPage loginPage;
 
