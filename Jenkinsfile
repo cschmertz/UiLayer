@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout Repos') {
             steps {
                 // UI Layer Repository
-                git url: 'https://github.com/cschmertz/UiLayer', branch: 'main'
+                checkout scm
 
                 // API Layer Repository
                 dir('ApiLayer') {
@@ -23,9 +23,7 @@ pipeline {
 
         stage('Build and Test UI Layer') {
             steps {
-                dir('UiLayer') {
-                    sh 'mvn clean install'  // This builds and runs tests for the UI layer
-                }
+                sh 'mvn clean install'  // This builds and runs tests for the UI layer
             }
             post {
                 always {
