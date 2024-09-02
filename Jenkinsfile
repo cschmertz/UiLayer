@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build and Test UI Layer') {
             steps {
-                sh 'mvn clean install'  // This builds and runs tests for the UI layer
+                sh 'mvn clean test'  // Changed from 'mvn clean install' to ensure tests are run
             }
             post {
                 always {
@@ -35,7 +35,7 @@ pipeline {
         stage('Build and Test API Layer') {
             steps {
                 dir('ApiLayer') {
-                    sh 'mvn clean install'  // This builds and runs tests for the API layer
+                    sh 'mvn clean test'  // Changed from 'mvn clean install' to ensure tests are run
                 }
             }
             post {
@@ -48,7 +48,7 @@ pipeline {
         stage('Build and Test Database Layer') {
             steps {
                 dir('DatabaseLayer') {
-                    sh 'mvn clean install'  // This builds and runs tests for the Database layer
+                    sh 'mvn clean test'  // Changed from 'mvn clean install' to ensure tests are run
                 }
             }
             post {
